@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add your CSS and other meta tags as needed -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>Login - Outdoors</title>
+    
+    <!-- Add Firebase SDK initialization script (same as in index.html) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    
+    <!-- Your Firebase configuration script (same as in index.html) -->
+    <script>
+        // Your Firebase project configuration
+        const firebaseConfig = {
+
+apiKey: "AIzaSyBUEbxHbj35MDEx5o6dNGTFmj5TiLC69Uo",
+
+authDomain: "outdoors-99ed9.firebaseapp.com",
+
+projectId: "outdoors-99ed9",
+
+storageBucket: "outdoors-99ed9.appspot.com",
+
+messagingSenderId: "291474998778",
+
+appId: "1:291474998778:web:14866cdf5935fa94009043",
+
+measurementId: "G-YJL0DV5291"
+
+};
+
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <!-- Redirection script -->
+    <script>
+        // Check if the user is logged in
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in, redirect to main_project.html
+                window.location.href = 'main_project.html';
+            } else {
+                // User is not signed in, show login form
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
